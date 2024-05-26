@@ -28,4 +28,9 @@
     "LOG_CHANNEL": "stderr",
     "SESSION_DRIVER": "cookie"
 }
+<<<<<<< HEAD
 }
+=======
+}
+
+>>>>>>> 64cf45b5e0e6fb796b96871769f24fd5cec8e73f
