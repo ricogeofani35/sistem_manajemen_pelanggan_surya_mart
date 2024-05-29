@@ -108,8 +108,10 @@ class DataCustomerController extends Controller
         if($order) {
             $order_details = OrderDetail::where('order_id', $order->id)->get();
             
-            foreach($order_details as $order_detail) {
-                $order_detail->delete();
+            if($order_details) {
+                foreach($order_details as $order_detail) {
+                    $order_detail->delete();
+                }
             }
 
             $order->delete();
@@ -121,7 +123,9 @@ class DataCustomerController extends Controller
 
         // delete data user
         $user = User::where('id', $customer->user_id)->first();
-        $user->delete();
+        if($user) {
+            $user->delete();
+        }
 
         return redirect('/data_customers')->with('success', 'Data Customer Berhasil Didelete!');
     }

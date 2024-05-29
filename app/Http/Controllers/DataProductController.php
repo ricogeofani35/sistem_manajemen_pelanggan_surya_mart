@@ -148,7 +148,9 @@ class DataProductController extends Controller
 
         // delete promotion
         $promotion = Promotion::where('product_id', $id)->first();
-        $promotion->delete();
+        if($promotion) {
+            $promotion->delete();
+        }
 
         // delete data product
         $data_product = Product::findOrFail($id);

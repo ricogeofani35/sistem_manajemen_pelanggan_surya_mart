@@ -78,9 +78,12 @@ class DataOrderController extends Controller
 
         $order_details = OrderDetail::where('order_id', $order->id)->get();
 
-        foreach($order_details as $order_detail) {
-            $order_detail->delete();
+        if($order_details) {
+            foreach($order_details as $order_detail) {
+                $order_detail->delete();
+            }
         }
+        
         $order->delete();
     
         return redirect('/data_orders')->with('success', 'Data Order Berhasil Didelete');
