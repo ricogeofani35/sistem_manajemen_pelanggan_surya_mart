@@ -154,8 +154,6 @@ class DataProductController extends Controller
 
         // delete data product
         $data_product = Product::findOrFail($id);
-        
-        Promotion::where('product_id', $data_product->id)->delete();
 
         $data_product->delete();
         return redirect('/data_products')->with('success', 'Data Product Berhasil Didelete!');
