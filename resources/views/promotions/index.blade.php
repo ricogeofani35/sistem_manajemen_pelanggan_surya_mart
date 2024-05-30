@@ -34,7 +34,7 @@
             @foreach ($promotions as $promotion)
             <div class="col-lg-3 col-md-4 col-sm-6 col-12 my-2">
                 <div class="card shadow rounded">
-                    <img src="{{ asset('/storage/assets/images/' . $promotion->product->image) }}" class="card-img-top" height="250">
+                    <img src="{{ asset('/storage/' . $promotion->product->image) }}" class="card-img-top" height="250">
                     <div class="card-body">
                         <h4 class=" text-center border-bottom pb-2">{{ $promotion->product->name }}</h4>
                         <div style="height: 80px; overflow-y: scroll">
