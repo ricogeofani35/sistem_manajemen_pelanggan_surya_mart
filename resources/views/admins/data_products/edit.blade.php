@@ -70,7 +70,7 @@
                     <div class="row align-items-end">
                       <div class="col-md-3">
                         @if($data_product->image)
-                          <img src="{{ asset('/storage/assets/images/' . $data_product->image) }}" width="100" height="50">
+                          <img src="{{ asset('/storage/' . $data_product->image) }}" width="100" height="50">
                         @endif
                       </div>
                       <div class="col-md-9">

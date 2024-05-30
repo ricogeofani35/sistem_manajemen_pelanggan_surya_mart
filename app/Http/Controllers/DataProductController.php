@@ -50,7 +50,7 @@ class DataProductController extends Controller
 
         //upload image
         $fileName = $request->file('image');
-        $fileName->storeAs('public/assets/images', $fileName->hashName());
+        $fileName->storeAs('public', $fileName->hashName());
         
         Product::create([
             'code'  => $request->code,
@@ -98,10 +98,10 @@ class DataProductController extends Controller
         if($request->hasFile('image')) {
             //upload new image
             $fileName = $request->file('image');
-            $fileName->storeAs('public/assets/images', $fileName->hashName());
+            $fileName->storeAs('public', $fileName->hashName());
 
             // delete old image
-            Storage::delete('/public/assets/images/'.$data_product->image);
+            Storage::delete('/public/'.$data_product->image);
 
             // update data with image
             $data_product->update([
@@ -140,9 +140,6 @@ class DataProductController extends Controller
             foreach($order_details as $order_detail) {
                 $order_detail->delete();
 
-                $order = Order::where('id', $order_detail->order_id)->first();
-
-                $order->delete();
             }
         }
 
@@ -155,6 +152,7 @@ class DataProductController extends Controller
         // delete data product
         $data_product = Product::findOrFail($id);
 
+        Storage::delete('/public/'.$data_product->image);
         $data_product->delete();
         return redirect('/data_products')->with('success', 'Data Product Berhasil Didelete!');
     }

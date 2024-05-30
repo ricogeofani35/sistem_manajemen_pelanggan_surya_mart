@@ -26,7 +26,7 @@ $(function() {
               $('#price').text(data.price);
               $('#unit').text(data.unit);
               $('#stock').text(data.stock);
-              $('.img-product').attr('src', `/storage/assets/images/${data.image}`);
+              $('.img-product').attr('src', `/storage/${data.image}`);
               
               // show modal
               $('#modalProductDetail').modal('show');

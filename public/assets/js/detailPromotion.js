@@ -29,7 +29,7 @@ $(document).ready(function(){
                   $('#beginning-date').text(data.beginning_date);
                   $('#end-date').text(data.end_date);
                   $('#description').text(data.description);
-                  $('.img-promotion').attr('src', `/storage/assets/images/${data.product.image}`);
+                  $('.img-promotion').attr('src', `/storage/${data.product.image}`);
                 }
             },
             error: (err) =>  console.log('error:' + err)

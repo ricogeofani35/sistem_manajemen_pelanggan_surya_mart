@@ -57,7 +57,7 @@
                            <td class="text-center">{{ $data_product->stock }}</td>
                            <td class="text-center">
                                 @if($data_product->image)
-                                    <img src="{{ asset('/storage/assets/images/'.$data_product->image) }}" style="height: 50px;width:100px;">
+                                    <img src="{{ asset('/storage/'.$data_product->image) }}" style="height: 50px;width:100px;">
                                 @else 
                                     <span>No image found!</span>
                                 @endif

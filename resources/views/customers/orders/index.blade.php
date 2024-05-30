@@ -8,7 +8,7 @@
             @foreach ($products as $product)
             <div class="col-lg-3 col-md-4 col-sm-6 col-12 my-2">
                 <div class="card shadow rounded">
-                    <img src="{{ asset('/storage/assets/images/' . $product->image) }}" class="card-img-top" height="250">
+                    <img src="{{ asset('/storage/' . $product->image) }}" class="card-img-top" height="250">
                     <div class="card-body">
                         <h4 class=" text-center border-bottom pb-2">{{ $product->name }}</h4>
                         <p class="card-text">
